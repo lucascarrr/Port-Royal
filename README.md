@@ -14,3 +14,5 @@ This is a work in progress; the aim is to develop an implementation for formal c
 
 - Visualising concept lattices
 - Entailment
+
+| if you have any queries, contact me at crrluc003 [at] myuct.ac.za
