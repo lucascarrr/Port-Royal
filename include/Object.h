@@ -1,24 +1,26 @@
+// Object.h
 #ifndef OBJECT_H
 #define OBJECT_H
 
 #include <string>
 #include <vector>
-#include "Attribute.h" // Ensure this include is correct
+#include <memory>
 
 class Attribute; // Forward declaration
 
 class Object {
 public:
     Object(const std::string& name);
-    ~Object();
+    Object(const Object& other);
+    ~Object() = default;
 
     const std::string& getName() const;
-    void addAttribute(Attribute* attribute); // Method to add attributes to the object
-    const std::vector<Attribute*>& getAttributes() const; // Getter for attributes
+    void addAttribute(std::shared_ptr<Attribute> attribute);
+    const std::vector<std::weak_ptr<Attribute>>& getAttributes() const;
 
 private:
     std::string name;
-    std::vector<Attribute*> attributes; // Vector to store attribute pointers
+    std::vector<std::weak_ptr<Attribute>> attributes;
 };
 
 #endif // OBJECT_H
