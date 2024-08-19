@@ -16,3 +16,19 @@ This is a work in progress; the aim is to develop an implementation for formal c
 - Entailment
 
 | if you have any queries, contact me at crrluc003 [at] myuct.ac.za
+
+## Inputting a Formal Context
+
+A formal context should be input to the program as a JSON file, following the schema below
+
+```
+{
+  "objects": ["Object1", "Object2", "Object3"],
+  "attributes": ["Attribute1", "Attribute2", "Attribute3"],
+  "incidenceRelation": {
+    "Object1": ["Attribute1", "Attribute2"],
+    "Object2": ["Attribute2"],
+    "Object3": ["Attribute1", "Attribute3"]
+  }
+}
+```
